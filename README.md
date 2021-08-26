@@ -1,6 +1,6 @@
 # portfolio
 
-<h2>Technology</h2>
+<h2><img src="https://img.shields.io/badge/V-1.0-brightgreen" /></h2>
 <p>This project was made possible using the following technology:</p>
 <p>
 <img src="https://img.shields.io/badge/Python-django-green"/>
