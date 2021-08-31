@@ -1,0 +1,4 @@
+{
+  "emmet.excludeLanguages": ["markdown"],
+  "python.formatting.provider": "black"
+}
