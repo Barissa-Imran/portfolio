@@ -1,1 +1,112 @@
-<h1>Hello world</h1>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="I'm a keen software developer who builds excellent user experiences in Django while also solving client problems"
+    />
+    <meta
+      name="keywords"
+      content="Django Portfolio Imran Barissa Software developer Fullstack developer Web developer Engineer Website Nairobi Kenya"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'memento/css/main.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'memento/img/logo.svg'%}"
+      type="image/x-icon"
+    />
+    <title>IMRAN-BARISSA</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="logo">
+          <img src="{% static 'memento/img/logo.svg' %}" alt="logo" />
+        </div>
+        <ul class="navitem">
+          <li class="navlink">
+            <a href="#portfolio">PORTFOLIO</a>
+          </li>
+          <li class="navlink">
+            <a href="#resume">RESUME'</a>
+          </li>
+          <li class="navlink">
+            <a href="#contact">CONTACT</a>
+          </li>
+          <li class="navlink">
+            <div id="toggle">
+              <i class="indicator"></i>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="content">
+      <h1 class="hero">IMRAN</h1>
+      <h2 class="hero2">SOFTWARE DEVELOPER</h2>
+    </section>
+    <section class="social">
+      <a href="#github"
+        ><img src="{% static 'memento/img/github.svg' %}" alt="github"
+      /></a>
+      <a href="#twitter"
+        ><img src="{% static 'memento/img/twitter.svg' %}" alt="twitter"
+      /></a>
+      <a href="#instagram"
+        ><img src="{% static 'memento/img/instagram.svg' %}" alt="instagram"
+      /></a>
+    </section>
+    <section class="portfolio" id="portfolio">
+      {% for project in projects %}
+      <div class="container">
+        <div class="card">
+          <div class="imgBx">
+            <img src="{{project.image}}" alt="{{project.title}}" />
+          </div>
+          <div class="desc">
+            <h2>{{project.title}}</h2>
+            <p>{{project.description}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+    <section class="contact" id="contact">
+      <div class="cont-details">
+        <p class="heading1">CONTACT</p>
+        <p class="text">
+          Found anything interesting you want to talk about?<br />
+          you can reach me through the below
+        </p>
+        <p class="heading2">Address</p>
+        <p class="text">Nairobi, Nairobi-Kenya</p>
+        <p class="heading2">Phone</p>
+        <a href="tel:{+254718895455}">+254-718-895-455</a>
+        <p class="heading2">Email</p>
+        <a
+          href="mailto:imranbarissa@gmail.com?subject=Subject&body=Write your message Here!"
+          >imranbarissa@gmail.com</a
+        >
+      </div>
+      <div class="cont-form">
+        <p class="heading1">CONTACT FORM</p>
+      </div>
+    </section>
+    <footer class="foot">
+      <p>
+        made with
+        <img src="{% static 'memento/img/heart-fill.svg' %}" alt="heart" /> by
+        Imran Barissa
+      </p>
+    </footer>
+    <script
+      type="text/javascript"
+      src="{% static 'memento/js/main.js' %}"
+    ></script>
+  </body>
+</html>
