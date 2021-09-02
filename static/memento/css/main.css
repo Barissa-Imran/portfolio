@@ -171,9 +171,49 @@ a {
 
 /* contact section styles */
 #contact {
+  text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 30px 50px;
+  color: #ffffff;
+  justify-content: space-between;
+}
+#contact.cont-details,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.cont-form {
+  min-width: 40%;
+  border-radius: 18px;
+  background: #1b1c20;
+  box-shadow: 5px 5px 11px #0d0d0f, -5px -5px 11px #292b31;
+}
+
+.heading1 {
+  color: #ffffff;
+  font-weight: 900;
+}
+.heading2 {
+  font-weight: 800;
+}
+
+/* Contact form styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+}
+
+/* Footer area styles */
+.foot {
+  box-shadow: 5px 5px 11px #0d0d0f;
+}
+.foot > P {
+  text-align: center;
+  color: #ffffff;
 }
 
 /* night mode */

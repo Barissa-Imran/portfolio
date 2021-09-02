@@ -51,13 +51,13 @@
       <h2 class="hero2">SOFTWARE DEVELOPER</h2>
     </section>
     <section class="social">
-      <a href="#github"
+      <a href="https://github.com/Barissa-Imran"
         ><img src="{% static 'memento/img/github.svg' %}" alt="github"
       /></a>
-      <a href="#twitter"
+      <a href="https://twitter.com/BImran_Dev"
         ><img src="{% static 'memento/img/twitter.svg' %}" alt="twitter"
       /></a>
-      <a href="#instagram"
+      <a href="https://instagram.com/Barry_Imran"
         ><img src="{% static 'memento/img/instagram.svg' %}" alt="instagram"
       /></a>
     </section>
@@ -94,7 +94,11 @@
         >
       </div>
       <div class="cont-form">
-        <p class="heading1">CONTACT FORM</p>
+        <span class="heading1">CONTACT FORM</span>
+        <form action="" method="post">
+          {% csrf_token %} {{form}}
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     </section>
     <footer class="foot">

@@ -9,3 +9,13 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(null=False)
+    subject = models.CharField(max_length=250, null=False)
+    message = models.TextField(null=False)
+
+    def __str__(self):
+        return self.email
