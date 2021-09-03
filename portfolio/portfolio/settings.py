@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Phone number field settings
+PHONENUMBER_DB_FORMAT = 'NATIONAL'
+PHONENUMBER_DEFAULT_REGION = 'KE'
 
 # Application definition
 
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # my apps
     "memento",
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
