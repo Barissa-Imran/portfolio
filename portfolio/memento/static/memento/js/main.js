@@ -11,3 +11,11 @@ toggle.onclick = function() {
     navTags.classList.toggle('active');
     card.classList.toggle('active');
 }
+
+// menu settings
+function menuToggle() {
+    const nav = document.getElementById('menu-overlay');
+    nav.classList.toggle('active');
+}
+
+// dark mode settings

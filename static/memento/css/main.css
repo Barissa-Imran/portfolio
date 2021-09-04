@@ -20,15 +20,74 @@ body {
 }
 /* navbar styles */
 
-nav {
+/* nav {
   display: flex;
   justify-content: space-between;
+} */
+#menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e3edf7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
 }
+#menu-overlay ul {
+  position: relative;
+}
+#menu-overlay ul li {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  display: block;
+}
+#menu-overlay ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 3.5em;
+  padding: 0 10px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+#menu-overlay ul li a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: #fffff0;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: right;
+  transition: 0.5s transform;
+}
+#menu-overlay ul li a:hover:before {
+  transform: translateY(-50%) scaleX(1);
+  transform-origin: left;
+  transition: 0.5s transform;
+}
+#toggleIcon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #fffff0;
+  z-index: 1;
+  cursor: pointer;
+}
+
 .logo {
   cursor: pointer;
 }
 
-ul {
+/* ul {
   list-style: none;
   display: flex;
   align-items: center;
@@ -41,7 +100,7 @@ nav a {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-}
+} */
 a {
   text-decoration: none;
   color: #ffffff;
@@ -52,8 +111,8 @@ a {
 #toggle {
   position: relative;
   display: block;
-  width: 70px;
-  height: 35px;
+  width: 50px;
+  height: 25px;
   border-radius: 160px;
   background: rgb(59, 61, 66);
   transition: 0.5s;
@@ -70,8 +129,8 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   background: linear-gradient(to bottom, #444, #222);
   border-radius: 50%;
   transform: scale(0.9);
@@ -81,7 +140,7 @@ a {
   transition: 0.5s;
 }
 #toggle.active .indicator {
-  left: 35px;
+  left: 25px;
   background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
     inset 0 4px 4px rgba(255, 255, 255, 1),
@@ -142,8 +201,8 @@ a {
 }
 .container .card .imgBx {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 200px;
+  height: 200px;
   top: -60px;
   left: 20px;
   z-index: 1;
@@ -201,9 +260,11 @@ a {
 input[type="text"],
 input[type="email"],
 textarea {
+  position: relative;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
+  background: none;
   display: inline-block;
 }
 
