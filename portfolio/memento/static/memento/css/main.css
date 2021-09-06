@@ -87,6 +87,9 @@ body {
   z-index: 1;
   cursor: pointer;
 }
+#toggleIcon.active {
+  background: #fffff0 url();
+}
 
 .logo {
   cursor: pointer;
@@ -297,3 +300,5 @@ a.active {
 .container .card .desc.active {
   color: #ffffff !important;
 }
+
+@media query 
