@@ -62,44 +62,56 @@
         ><img src="{% static 'memento/img/instagram.svg' %}" alt="instagram"
       /></a>
     </section>
-    <section class="portfolio" id="portfolio">
+    <section class="portfolio cards" id="portfolio">
       {% for project in projects %}
-      <div class="container">
-        <div class="card">
-          <div class="imgBx">
-            <img src="{{project.image}}" alt="{{project.title}}" />
-          </div>
-          <div class="desc">
+      <div class="card">
+        <div class="card_image">
+          <img src="{{project.image}}" alt="{{project.title}}" />
+        </div>
+        <div class="card_content">
+          <div class="card_title">
             <h2>{{project.title}}</h2>
+          </div>
+          <div class="card_detail">
             <p>{{project.description}}</p>
+          </div>
+          <div class="btns">
+            <a href="{{project.git}}" class="git_btn">
+              <button>Source Code</button>
+            </a>
+            <a href="{{project.demo}}" class="demo_btn">
+              <button>Live Demo</button>
+            </a>
           </div>
         </div>
       </div>
       {% endfor %}
     </section>
     <section class="contact" id="contact">
-      <div class="cont-details">
-        <p class="heading1">CONTACT</p>
-        <p class="text">
-          Found anything interesting you want to talk about?<br />
-          you can reach me through the below
-        </p>
-        <p class="heading2">Address</p>
-        <p class="text">Nairobi, Nairobi-Kenya</p>
-        <p class="heading2">Phone</p>
-        <a href="tel:{+254718895455}">+254-718-895-455</a>
-        <p class="heading2">Email</p>
-        <a
-          href="mailto:imranbarissa@gmail.com?subject=Subject&body=Write your message Here!"
-          >imranbarissa@gmail.com</a
-        >
-      </div>
-      <div class="cont-form">
-        <span class="heading1">CONTACT FORM</span>
-        <form action="" method="post">
-          {% csrf_token %} {{form}}
-          <input type="submit" value="Submit" />
-        </form>
+      <div class="cont_contents">
+        <div class="cont-details">
+          <p class="heading1">CONTACT</p>
+          <p class="text">
+            Found anything interesting you want to talk about?<br />
+            you can reach me through the below
+          </p>
+          <p class="heading2">Address</p>
+          <p class="text">Nairobi, Nairobi-Kenya</p>
+          <p class="heading2">Phone</p>
+          <a href="tel:{+254718895455}">+254-718-895-455</a>
+          <p class="heading2">Email</p>
+          <a
+            href="mailto:imranbarissa@gmail.com?subject=Subject&body=Write your message Here!"
+            >imranbarissa@gmail.com</a
+          >
+        </div>
+        <div class="cont-form">
+          <span class="heading1">CONTACT FORM</span>
+          <form action="" method="post">
+            {% csrf_token %} {{form}}
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
     </section>
     <footer class="foot">
