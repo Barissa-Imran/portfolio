@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import URLField
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -7,6 +8,8 @@ class Project(models.Model):
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField(max_length=500)
     technology = models.CharField(max_length=200)
+    source_code = models.URLField(default="https://github.com/Barissa-Imran")
+    demo = models.URLField(default="https://github.com/Barissa-Imran")
 
     def __str__(self):
         return self.title
@@ -57,7 +60,7 @@ class Referee(models.Model):
     name = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
     organisation = models.CharField(max_length=200)
-    address = models.CharField(max_length=200, blank=True)
+    address = models.CharField(max_length=200, blank=True, null=True)
     email = models.EmailField()
     tel = PhoneNumberField()
 

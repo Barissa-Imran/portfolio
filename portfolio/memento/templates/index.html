@@ -62,6 +62,64 @@
         ><img src="{% static 'memento/img/instagram.svg' %}" alt="instagram"
       /></a>
     </section>
+    <section class="about">
+      <h2 class="about_title">About Me</h2>
+      <p class="about_details">
+        I am a passionate software Developer with a hands-on, high energy
+        approach, well-developed skills in Agile methodology, and an
+        unapologetically user focused philosophy. I Have developed several
+        scripts and web apps, including a School Management System using
+        Python-Django and AWS.
+      </p>
+      <p class="stack_title">This is the stack I use but not limited to:</p>
+      <span class="tech">
+        <img
+          src="{% static 'memento/img/python.png' %}"
+          alt="python"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/django.svg' %}"
+          alt="Django"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/css.png' %}"
+          alt="css"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/git.svg' %}"
+          alt="git"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/github-color.svg' %}"
+          alt="github"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/html.svg' %}"
+          alt="html"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/javascript.png' %}"
+          alt="javascript"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/mysql.svg' %}"
+          alt="mysql"
+          class="python"
+        />
+        <img
+          src="{% static 'memento/img/postgreSQL.svg' %}"
+          alt="postgreSQL"
+          class="python"
+        />
+      </span>
+    </section>
     <section class="portfolio cards" id="portfolio">
       {% for project in projects %}
       <div class="card">
@@ -89,7 +147,7 @@
     </section>
     <section class="contact" id="contact">
       <div class="cont_contents">
-        <div class="cont-details">
+        <div class="cont_details">
           <p class="heading1">CONTACT</p>
           <p class="text">
             Found anything interesting you want to talk about?<br />
@@ -106,7 +164,7 @@
           >
         </div>
         <div class="cont-form">
-          <span class="heading1">CONTACT FORM</span>
+          <span class="cont_h1">CONTACT FORM</span>
           <form action="" method="post">
             {% csrf_token %} {{form}}
             <input type="submit" value="Submit" />

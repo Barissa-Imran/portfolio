@@ -84,7 +84,7 @@ body {
   right: 20px;
   width: 50px;
   height: 50px;
-  background: #fffff0 url(/static/img/menu-button.svg);
+  background: no-repeat url(/static/memento/img/list.svg);
   z-index: 1;
   cursor: pointer;
 }
@@ -159,18 +159,21 @@ a {
 /* content area styles pg1 */
 
 .content {
+  position: relative;
   text-align: center;
+  justify-content: center;
+  margin: 12vw;
 }
 
 .hero {
   position: relative;
   margin-top: 30px;
-  font-size: 22vw;
+  font-size: 15vw;
 }
 .hero2 {
   position: absolute;
-  transform: translate(39vw, -29vw);
-  font-size: 5.5vw;
+  transform: translate(30vw, -20vw);
+  font-size: 4vw;
   font-weight: normal;
 }
 .social {
@@ -178,9 +181,36 @@ a {
   position: fixed;
   display: grid;
   gap: 10px;
-  transform: translateY(-22vw);
+  transform: translateY(5vw);
 }
-
+/* About section styles */
+section.about {
+  color: #fff;
+  margin: -2rem 5vw 0;
+  padding: 0 2rem 2rem;
+  border-radius: 16px;
+  background: #1b1c20;
+  box-shadow: inset 5px 5px 10px #0f1012, inset -5px -5px 10px #27282e;
+}
+.about_title {
+  text-align: center;
+  -webkit-text-fill-color: none;
+  -webkit-text-stroke: 1 #fff;
+}
+.about_details {
+  text-align: justify;
+}
+.stack_title {
+  font-weight: bold;
+}
+span.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.tech img {
+  width: 10%;
+}
 /* portfolio styles */
 
 .cards {
@@ -242,43 +272,16 @@ a {
   );
 }
 /* contact section styles */
-#contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin: 30px 50px;
-  color: #ffffff;
-  text-align: center;
-}
 .cont_contents {
   display: flex;
-  flex-direction: column;
-  flex: 1 0 300px;
-  max-width: 450px;
-  overflow: hidden;
-  background: #1b1c20;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 5px 5px 11px #0d0d0f, -5px -5px 11px #292b31;
-  font-size: 1rem;
-  transition: transform 200ms ease-in-out;
+  /* flex-wrap: wrap; */
+  gap: 5vw;
+  margin: 0 5vw 0;
+  justify-content: center;
 }
-.cont-details {
-  flex: 0 0 200px;
+.cont_details {
+  text-align: center;
 }
-#contact.cont-details,
-a {
-  text-decoration: none;
-  color: inherit;
-}
-.cont-form {
-  /* min-width: 50%; */
-  border-radius: 18px;
-  background: #1b1c20;
-  box-shadow: 5px 5px 11px #0d0d0f, -5px -5px 11px #292b31;
-}
-
 .heading1 {
   color: #ffffff;
   font-weight: 900;
@@ -286,38 +289,62 @@ a {
 .heading2 {
   font-weight: 800;
 }
-
+.cont_h1 {
+  text-align: center;
+  font-weight: 900;
+}
 /* Contact form styles */
-/* input[type="text"],
+.cont-form {
+  max-width: 50%;
+  border-radius: 18px;
+  background: #1b1c20;
+  box-shadow: 5px 5px 11px #0d0d0f, -5px -5px 11px #292b31;
+}
+form {
+  margin: 10px;
+  padding: 5px;
+}
+input[type="text"],
 input[type="email"],
 textarea {
   position: relative;
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  background: none;
-  display: inline-block;
-} */
-/* input[type="submit"] {
-  background-color: #444;
   border: none;
-  border-radius: 25px;
+  border-color: #222;
+  border-style: inset;
+  border-radius: 10px;
+  width: 100%;
+  padding: 12px 5px 12px;
+  margin: 8px 0;
+  color: #fff;
+  background: none;
+}
+input[type="submit"] {
+  background-color: #444;
+  width: 10%;
+  border: none;
+  border-radius: 5px;
   color: #ffffff;
   cursor: pointer;
   box-shadow: 5px 5px 11px #0d0d0f, -5px -5px 11px #292b31;
-} */
+  transition: 0.5s ease-in-out;
+}
+input[type="submit"]:hover {
+  background-color: #222;
+}
 
 /* Footer area styles */
 .foot {
-  box-shadow: 5px 5px 11px #0d0d0f;
+  margin-top: 5px;
+  border-top: #fff;
 }
 .foot > P {
   text-align: center;
+  font-size: 1rem;
   color: #ffffff;
 }
 
 /* night mode */
-body.active {
+/* body.active {
   background: #e3edf7;
   color: #222;
 }
@@ -330,14 +357,14 @@ a.active {
 }
 .container .card .desc.active {
   color: #ffffff !important;
-}
+} */
 
 /* Responsive design styles */
 @media only screen and (max-width: 768px) {
   .hero2 {
     position: relative;
     align-items: center;
-    transform: translate(5vw, -24vw);
+    transform: translate(10vw, -10vw);
   }
 
   /* .container .card {
