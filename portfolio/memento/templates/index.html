@@ -52,15 +52,17 @@
       <h2 class="hero2">SOFTWARE DEVELOPER</h2>
     </section>
     <section class="social">
-      <a href="https://github.com/Barissa-Imran"
-        ><img src="{% static 'memento/img/github.svg' %}" alt="github"
-      /></a>
-      <a href="https://twitter.com/BImran_Dev"
-        ><img src="{% static 'memento/img/twitter.svg' %}" alt="twitter"
-      /></a>
-      <a href="https://instagram.com/Barry_Imran"
-        ><img src="{% static 'memento/img/instagram.svg' %}" alt="instagram"
-      /></a>
+      <span class="fixed">
+        <a href="https://github.com/Barissa-Imran"
+          ><img src="{% static 'memento/img/github.svg' %}" alt="github"
+        /></a>
+        <a href="https://twitter.com/BImran_Dev"
+          ><img src="{% static 'memento/img/twitter.svg' %}" alt="twitter"
+        /></a>
+        <a href="https://instagram.com/Barry_Imran"
+          ><img src="{% static 'memento/img/instagram.svg' %}" alt="instagram"
+        /></a>
+      </span>
     </section>
     <section class="about">
       <h2 class="about_title">About Me</h2>
@@ -175,8 +177,20 @@
     <footer class="foot">
       <p>
         made with
-        <img src="{% static 'memento/img/heart-fill.svg' %}" alt="heart" /> by
-        Imran Barissa
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          fill="red"
+          class="bi bi-heart-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+          />
+        </svg>
+        by Imran.ke
       </p>
     </footer>
     <script
