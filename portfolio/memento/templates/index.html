@@ -26,19 +26,21 @@
     <header class="navbar">
       <nav>
         <div class="logo">
-          <img src="{% static 'memento/img/logo.svg' %}" alt="logo" />
+          <a href="{% url 'index'%}">
+            <img src="{% static 'memento/img/logo.svg' %}" alt="logo" />
+          </a>
         </div>
         <div id="toggleIcon" onclick="menuToggle()"></div>
         <div id="menu-overlay">
           <ul class="navitem">
             <li class="navlink">
-              <a href="#portfolio">PORTFOLIO</a>
+              <a href="#portfolio" onclick="closeMenu()">PORTFOLIO</a>
             </li>
             <li class="navlink">
-              <a href="#resume">RESUME'</a>
+              <a href="#resume" onclick="closeMenu()">RESUME'</a>
             </li>
             <li class="navlink">
-              <a href="#contact">CONTACT</a>
+              <a href="#contact" onclick="closeMenu()">CONTACT</a>
             </li>
             <li id="toggle">
               <i class="indicator"></i>
@@ -51,15 +53,31 @@
       <h1 class="hero">IMRAN</h1>
       <h2 class="hero2">SOFTWARE DEVELOPER</h2>
     </section>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        style="color: #fff"
+        class="bi bi-chevron-up"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+        />
+      </svg>
+    </button>
     <section class="social">
       <span class="fixed">
-        <a href="https://github.com/Barissa-Imran"
+        <a href="https://github.com/Barissa-Imran" target="_blank"
           ><img src="{% static 'memento/img/github.svg' %}" alt="github"
         /></a>
-        <a href="https://twitter.com/BImran_Dev"
+        <a href="https://twitter.com/BImran_Dev" target="_blank"
           ><img src="{% static 'memento/img/twitter.svg' %}" alt="twitter"
         /></a>
-        <a href="https://instagram.com/Barry_Imran"
+        <a href="https://instagram.com/Barry_Imran" target="_blank"
           ><img src="{% static 'memento/img/instagram.svg' %}" alt="instagram"
         /></a>
       </span>
@@ -67,11 +85,10 @@
     <section class="about">
       <h2 class="about_title">About Me</h2>
       <p class="about_details">
-        I am a passionate software Developer with a hands-on, high energy
+        I am a self-taught software Developer with a hands-on, high energy
         approach, well-developed skills in Agile methodology, and an
         unapologetically user focused philosophy. I Have developed several
-        scripts and web apps, including a School Management System using
-        Python-Django and AWS.
+        scripts and web apps using Python, Django and JavaScript
       </p>
       <p class="stack_title">This is the stack I use but not limited to:</p>
       <span class="tech">
@@ -122,6 +139,7 @@
         />
       </span>
     </section>
+    <h2 class="project">Portfolio</h2>
     <section class="portfolio cards" id="portfolio">
       {% for project in projects %}
       <div class="card">
@@ -137,10 +155,19 @@
           </div>
           <div class="btns">
             <a href="{{project.git}}" class="git_btn">
-              <button>Source Code</button>
+              <button>
+                <img src="{% static 'memento/img/github.svg' %}" alt="github" />
+                Source Code
+              </button>
             </a>
             <a href="{{project.demo}}" class="demo_btn">
-              <button>Live Demo</button>
+              <button>
+                <img
+                  src="{% static 'memento/img/box-arrow-up-right.svg' %}"
+                  alt="live"
+                />
+                Live Demo
+              </button>
             </a>
           </div>
         </div>
@@ -190,7 +217,7 @@
             d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
           />
         </svg>
-        by Imran.ke
+        by Imran
       </p>
     </footer>
     <script

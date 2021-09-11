@@ -17,67 +17,25 @@ body {
   font-family: "Segoe UI", sans-serif;
   min-height: 100vh;
   margin: 0px 30px;
-  /* transition: 0.5s; */
 }
-/* navbar styles */
 
-/* nav {
+.logo {
+  cursor: pointer;
+}
+
+/* nav-bar styles */
+nav {
   display: flex;
   justify-content: space-between;
-} */
-#menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #e3edf7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: auto;
-  transform: scale(0);
-  transition: 0.5s;
-}
-#menu-overlay.active {
-  transform: scale(1);
-}
-#menu-overlay ul {
-  position: relative;
 }
 #menu-overlay ul li {
-  position: relative;
-  list-style: none;
-  text-align: center;
-  display: block;
+  display: inline-flex;
 }
 #menu-overlay ul li a {
-  position: relative;
-  text-decoration: none;
-  font-size: 3.5em;
-  padding: 0 10px;
-  color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: inline-block;
+  margin-left: 5vw;
 }
-#menu-overlay ul li a:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: #fffff0;
-  transform: translateY(-50%) scaleX(0);
-  transform-origin: right;
-  transition: 0.5s transform;
-}
-#menu-overlay ul li a:hover:before {
-  transform: translateY(-50%) scaleX(1);
-  transform-origin: left;
-  transition: 0.5s transform;
-}
+
+/* navbar styles end */
 #toggleIcon {
   position: fixed;
   top: 20px;
@@ -85,31 +43,14 @@ body {
   width: 50px;
   height: 50px;
   background: no-repeat url(/static/memento/img/list.svg);
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
+  visibility: hidden;
 }
 #toggleIcon.active {
-  background: #fffff0 url();
+  background: no-repeat url(/static/memento/img/x-lg.svg);
 }
 
-.logo {
-  cursor: pointer;
-}
-
-/* ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-ul > li {
-  padding: 0 15px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-} */
 a {
   text-decoration: none;
   color: #ffffff;
@@ -118,6 +59,7 @@ a {
 
 /* night mode button styles */
 #toggle {
+  visibility: hidden;
   position: relative;
   display: block;
   width: 50px;
@@ -130,7 +72,7 @@ a {
     inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1);
 }
 #toggle.active {
-  background: #e3edf7;
+  background: grey;
   box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
     inset 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.05);
 }
@@ -155,6 +97,29 @@ a {
     inset 0 4px 4px rgba(255, 255, 255, 1),
     inset 0 -4px 4px rgba(255, 255, 255, 1);
 }
+/* ----------scroll button styles------------- */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background: linear-gradient(to bottom, #444, #222);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 150%;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
+    inset 0 4px 4px rgba(255, 255, 255, 0.2),
+    inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* ------------------------------------------ */
+
+/* Scroll button */
 
 /* content area styles pg1 */
 
@@ -182,8 +147,12 @@ a {
 .social .fixed {
   position: fixed;
   display: grid;
-  gap: 10px;
+  gap: 15px;
+  z-index: 0;
   transform: translateY(-30vw);
+}
+.social .fixed img:hover {
+  padding-bottom: 5px;
 }
 /* About section styles */
 section.about {
@@ -194,10 +163,9 @@ section.about {
   background: #1b1c20;
   box-shadow: inset 5px 5px 10px #0f1012, inset -5px -5px 10px #27282e;
 }
+
 .about_title {
   text-align: center;
-  -webkit-text-fill-color: none;
-  -webkit-text-stroke: 1 #fff;
 }
 .about_details {
   text-align: justify;
@@ -219,7 +187,10 @@ span.tech {
   box-shadow: 5px 5px 10px #0d0d0f, -5px -5px 40px #292b31;
 }
 /* portfolio styles */
-
+.project {
+  text-align: center;
+  margin-bottom: -5px;
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -256,7 +227,6 @@ span.tech {
 .card_title {
   font-size: 1rem;
   font-weight: 700;
-  /* margin-bottom: 0.5rem; */
 }
 .card_detail {
   margin-bottom: 0.5rem;
@@ -270,6 +240,7 @@ span.tech {
   border: none;
   border-radius: 15px;
   color: #fff;
+  justify-content: center;
   cursor: pointer;
   background: rgb(166, 19, 145);
   background: radial-gradient(
@@ -277,6 +248,9 @@ span.tech {
     rgba(166, 19, 145, 1) 0%,
     rgba(34, 71, 115, 1) 100%
   );
+}
+.btns button:hover {
+  padding: 5px;
 }
 /* contact section styles */
 .cont_contents {
@@ -349,8 +323,8 @@ input[type="submit"]:hover {
   color: #ffffff;
 }
 
-/* night mode */
-/* body.active {
+/* night mode settings*/
+body.active {
   background: #e3edf7;
   color: #222;
 }
@@ -363,10 +337,70 @@ a.active {
 }
 .container .card .desc.active {
   color: #ffffff !important;
-} */
+}
 
 /* Responsive design styles */
 @media only screen and (max-width: 768px) {
+  #toggleIcon {
+    visibility: visible;
+  }
+  #menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-y: auto;
+    transform: scale(0);
+    transition: 0.5s;
+  }
+  #menu-overlay.active {
+    transform: scale(1);
+  }
+
+  #menu-overlay ul {
+    position: relative;
+  }
+  #menu-overlay ul li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    display: block;
+  }
+  #menu-overlay ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 3em;
+    padding: 0 10px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 0vw;
+  }
+  #menu-overlay ul li a:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #fffff0;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: right;
+    transition: 0.5s transform;
+  }
+  #menu-overlay ul li a:hover:before {
+    transform: translateY(-50%) scaleX(1);
+    transform-origin: left;
+    transition: 0.5s transform;
+  }
+
   .hero2 {
     position: relative;
     align-items: center;
