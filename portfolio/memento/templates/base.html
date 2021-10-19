@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="I'm a keen software developer who builds excellent user experiences in Django while also solving client problems"
+    />
+    <meta
+      name="keywords"
+      content="Django Portfolio Imran Barissa Software developer Fullstack developer Web developer Engineer Website Nairobi Kenya"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'memento/css/main.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'memento/img/logo.svg'%}"
+      type="image/x-icon"
+    />
+    <title>IMRAN-BARISSA</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <nav>
+        <div class="logo">
+          <a href="{% url 'index'%}">
+            <img src="{% static 'memento/img/logo.svg' %}" alt="logo" />
+          </a>
+        </div>
+        <div id="toggleIcon" onclick="menuToggle()"></div>
+        <div id="menu-overlay">
+          <ul class="navitem">
+            <li class="navlink">
+              <a href="#portfolio" onclick="closeMenu()">PORTFOLIO</a>
+            </li>
+            <li class="navlink">
+              <a href="#resume" onclick="closeMenu()">RESUME'</a>
+            </li>
+            <li class="navlink">
+              <a href="#contact" onclick="closeMenu()">CONTACT</a>
+            </li>
+            <li id="toggle">
+              <i class="indicator"></i>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    {% block content %}{% endblock content %}
+    <footer class="foot">
+      <p>
+        made with
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          fill="red"
+          class="bi bi-heart-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+          />
+        </svg>
+        by Imran
+      </p>
+    </footer>
+    <script
+      type="text/javascript"
+      src="{% static 'memento/js/main.js' %}"
+    ></script>
+  </body>
+</html>

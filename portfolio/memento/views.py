@@ -10,9 +10,7 @@ def index(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse("Your message was sent successfully")
-        else:
-            return HttpResponse("Please try again")
+            return render(request, "sucessful.html")
     form = ContactForm()
     context = {"projects": Project.objects.all(), "form": form}
     return render(request, "index.html", context)
