@@ -23,6 +23,7 @@ sqlparse = "==0.4.2"
 tomli = "==1.2.1"
 Django = "==3.2.6"
 django-heroku = "*"
+pillow = "*"
 
 [dev-packages]
 black = "*"
