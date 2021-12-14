@@ -38,7 +38,11 @@
             </li>
             <li class="navlink">
               <a
-                href="{% static 'memento/img/imrancv.pdf' %}"
+              {% for resume in resume %}
+
+                href="{{ resume }}"
+              
+              {% endfor %}
                 open
                 target="_blank"
                 onclick="closeMenu()"
@@ -55,6 +59,11 @@
         </div>
       </nav>
     </header>
+    {% comment %} message display {% endcomment %} 
+    {% if messages %} 
+    {% for message in messages %}
+    <div class="{{message.tags }}" role="alert">{{ message }}</div>
+    {% endfor %} {% endif %}
     <section class="content">
       <h1 class="hero">IMRAN</h1>
       <h2 class="hero2">SOFTWARE DEVELOPER</h2>
@@ -209,7 +218,7 @@
     </section>
     <footer class="foot">
       <p>
-        made with
+        &copy;2021 | made with
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="13"

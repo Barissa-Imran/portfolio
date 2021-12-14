@@ -28,11 +28,17 @@ nav {
   display: flex;
   justify-content: space-between;
 }
+
 #menu-overlay ul li {
   display: inline-flex;
 }
 #menu-overlay ul li a {
   margin-left: 5vw;
+}
+
+#menu-overlay ul li a:hover {
+  color: coral;
+  cursor: pointer;
 }
 
 /* navbar styles end */
@@ -337,6 +343,14 @@ a.active {
 }
 .container .card .desc.active {
   color: #ffffff !important;
+}
+
+/* alert styles */
+.info {
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+  background-color: rgb(77, 230, 184);
 }
 
 /* Responsive design styles */

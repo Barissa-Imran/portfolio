@@ -17,8 +17,7 @@ class Project(models.Model):
 
 # from top of the cv left to right...
 class Resume(models.Model):
-    tech_skills = models.TextField()
-    core_skills = models.TextField()
+    CV = models.FileField(upload_to="cv")
 
 
 class Education(models.Model):

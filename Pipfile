@@ -4,8 +4,24 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-python-decouple = "*"
+python-decouple = "==3.4"
+gunicorn = "*"
+asgiref = "==3.4.1"
+click = "==8.0.1"
+colorama = "==0.4.4"
+django-phonenumber-field = "==5.2.0"
+mypy-extensions = "==0.4.3"
+mysql-connector-python = "==8.0.26"
+pathspec = "==0.9.0"
+phonenumbers = "==8.12.31"
+platformdirs = "==2.3.0"
+protobuf = "==3.17.3"
+pytz = "==2021.1"
+regex = "==2021.8.28"
+six = "==1.16.0"
+sqlparse = "==0.4.2"
+tomli = "==1.2.1"
+Django = "==3.2.6"
 
 [dev-packages]
 black = "*"
