@@ -33,9 +33,9 @@ def index(request):
                 send_mail(
                     "PORTFOLIO MESSAGE",
                     msg_plain,
-                    config(EMAIL_USER),
+                    config('EMAIL_USER'),
                     [
-                        config(MY_EMAIL),
+                        config('MY_EMAIL'),
                     ],
                 )
             except:
