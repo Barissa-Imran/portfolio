@@ -223,6 +223,7 @@ span.tech {
 .card_image {
   flex: 0 0 200px;
   overflow: hidden;
+  object-fit: fill;
 }
 .card_content {
   display: flex;
@@ -293,6 +294,10 @@ span.tech {
   border-radius: 18px;
   background: #1b1c20;
   box-shadow: 5px 5px 11px #0d0d0f, -5px -5px 11px #292b31;
+}
+legend {
+  font-weight: 900;
+  text-align: center;
 }
 form {
   margin: 10px;

@@ -180,13 +180,13 @@
               </div>
 
           <div class="btns">
-            <a href="{{ project.source_code }}" class="git_btn">
+            <a href="{{ project.source_code }}" target="_blank" class="git_btn">
               <button>
                 <img src="{% static 'memento/img/github.svg' %}" alt="github" />
                 Source Code
               </button>
             </a>
-            <a href="{{ project.demo }}" class="demo_btn">
+            <a href="{{ project.demo }}" target="_blank" class="demo_btn">
               <button>
                 <img
                   src="{% static 'memento/img/box-arrow-up-right.svg' %}"
@@ -219,8 +219,9 @@
           >
         </div>
         <div class="cont-form">
-          <span class="cont_h1">CONTACT FORM</span>
+          <!-- <span class="cont_h1">CONTACT FORM</span> -->
           <form action="" method="post">
+            <legend>CONTACT FORM</legend>
             {% csrf_token %} {{form}}
             <input type="submit" value="Submit" />
           </form>
