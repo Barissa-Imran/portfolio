@@ -38,11 +38,16 @@
             </li>
             <li class="navlink">
               <a
-              {% for resume in resume %}
-
+                {%
+                for
+                resume
+                in
+                resume
+                %}
                 href="{{ resume }}"
-              
-              {% endfor %}
+                {%
+                endfor
+                %}
                 open
                 target="_blank"
                 onclick="closeMenu()"
@@ -59,11 +64,11 @@
         </div>
       </nav>
     </header>
-    {% comment %} message display {% endcomment %} 
-    {% if messages %} 
+    {% comment %} message display {% endcomment %} {% if messages %} 
     {% for message in messages %}
     <div class="{{message.tags }}" role="alert">{{ message }}</div>
-    {% endfor %} {% endif %}
+    {% endfor %} 
+    {% endif %}
     <section class="content">
       <h1 class="hero">IMRAN</h1>
       <h2 class="hero2">SOFTWARE DEVELOPER</h2>
@@ -99,7 +104,7 @@
     </section>
     <section class="about">
       <h2 class="about_title">About Me</h2>
-      <p class="about_details" style="text-align:justify">
+      <p class="about_details" style="text-align: justify">
         I am a self-taught software Developer with a hands-on, high energy
         approach, well-developed skills in Agile methodology, and an
         unapologetically user focused philosophy. I Have developed several
@@ -159,7 +164,7 @@
       {% for project in projects %}
       <div class="card">
         <div class="card_image">
-          <img src="{{project.image}}" alt="{{project.title}}" />
+          <img src="{{project.image.url}}" alt="{{project.title}}" />
         </div>
         <div class="card_content">
           <div class="card_title">
@@ -168,14 +173,20 @@
           <div class="card_detail">
             <p>{{project.description}}</p>
           </div>
+              <div class="tech">
+                <small>
+                {{project.technology}}
+                </small>
+              </div>
+
           <div class="btns">
-            <a href="{{project.git}}" class="git_btn">
+            <a href="{{ project.source_code }}" class="git_btn">
               <button>
                 <img src="{% static 'memento/img/github.svg' %}" alt="github" />
                 Source Code
               </button>
             </a>
-            <a href="{{project.demo}}" class="demo_btn">
+            <a href="{{ project.demo }}" class="demo_btn">
               <button>
                 <img
                   src="{% static 'memento/img/box-arrow-up-right.svg' %}"

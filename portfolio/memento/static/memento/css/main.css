@@ -237,6 +237,14 @@ span.tech {
 .card_detail {
   margin-bottom: 0.5rem;
 }
+.tech {
+  margin-bottom: 5px;
+  padding: 2px;
+  width: fit-content;
+  color: #00ff00;
+  font-weight: bold;
+  border-radius: 10px;
+}
 .btns {
   display: flex;
   margin-top: auto;

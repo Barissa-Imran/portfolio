@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render
+
 from .models import Project, Resume
 from .forms import ContactForm
 from django.core.mail import send_mail

@@ -1,7 +1,5 @@
 from django.db import models
-from django.db.models.fields import URLField
 from phonenumber_field.modelfields import PhoneNumberField
-
 
 class Project(models.Model):
     image = models.ImageField(upload_to="media")
